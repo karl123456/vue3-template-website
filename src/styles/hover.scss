@@ -1,0 +1,14 @@
+/** 模拟hover样式 >>> **/
+.pointer-trigger {
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+
+  &.pointer-over {
+    opacity: 0.85;
+  }
+
+  &.pointer-down {
+    transform: scale(0.95);
+  }
+}
+/** <<< 模拟hover样式 **/

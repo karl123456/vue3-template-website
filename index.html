@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./logo.png" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,400,500,700">
+    <style>
+      .error-modal {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #333333;
+        font-size: 16px;
+      }
+
+      .error-modal-text {
+        position: relative;
+        margin-top: 250px;
+        z-index: 9999999;
+        display: inline-block;
+        padding: 40px;
+        width: auto;
+        height: auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        color: rgba(0, 100, 255);
+      }
+
+      .error-modal-text:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="error-modal" id="errorModal">
+      <div class="error-modal-text" onclick="window.location.reload()">
+        检测到应用更新<br />应用资源加载失败，点击重启&nbsp;<span
+          id="errorCounter"
+          >5</span
+        >
+      </div>
+    </div>
+    <div id="app"></div>
+    <script>
+      (function () {
+        var loadError = false;
+        function showErrorModal() {
+          if (loadError) {
+            return;
+          }
+          loadError = true;
+          document.getElementById('errorModal').style.display = 'block';
+          var counter = document.getElementById('errorCounter');
+          var t = 5;
+          var timer;
+          timer = setInterval(() => {
+            t -= 1;
+            counter.innerText = t;
+            if (t === 0) {
+              clearInterval(timer);
+              window.location.reload();
+            }
+          }, 1000);
+        }
+        window.addEventListener(
+          'error',
+          function (e) {
+            var nodeName = e.target ? e.target.nodeName : null;
+            if (nodeName === 'LINK' || nodeName === 'SCRIPT') {
+              var src = e.target.href || e.target.src;
+              if (src && src.indexOf('/assets/') > -1) {
+                showErrorModal();
+              }
+            }
+          },
+          true
+        );
+      })();
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

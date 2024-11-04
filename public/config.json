@@ -1,0 +1,11 @@
+{
+  "app": {
+    "version": "0.0.2",
+    "language": "zh-CN",
+    "theme": "light",
+    "title": "清江浦社区"
+  },
+  "server": {
+    "base": "http://test.cameltec.cn/bid-it/bid-gateway"
+  }
+}

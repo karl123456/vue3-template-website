@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.vue"],
+  "compilerOptions": {
+    "allowJs":true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "lib": ["ES2018","DOM"],
+    "moduleResolution":"Node"
+  },
+  "types":["node"],
+  "references": [
+    {
+      "path": "./tsconfig.vite-config.json"
+    }
+  ]
+}

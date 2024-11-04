@@ -1,0 +1,22 @@
+::v-deep {
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 30px;
+  }
+  .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 10px;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #f8c79a;
+  }
+}

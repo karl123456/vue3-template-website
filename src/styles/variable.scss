@@ -1,0 +1,30 @@
+/**
+*  系统变量
+*/
+
+// $brand-color: #027DB4;
+$brand-color: var(--ant-primary-color);
+
+// 导航高度
+$nav-height: 60px;
+
+// 详情页头部高度
+$header-height: 64px;
+
+// 内容间距
+$space: 16px;
+$space-middle: 8px;
+$space-small: 4px;
+
+// 安全显示区域最大宽度
+$safe-area-width: 1920px;
+// $safe-area-width: none;
+
+// 侧边菜单宽度
+$sider-width: 200px;
+
+$border-base: 1px solid rgba(223, 225, 230, 1);
+
+$transition: all ease-in-out 200ms;
+
+$border-radius: 4px;

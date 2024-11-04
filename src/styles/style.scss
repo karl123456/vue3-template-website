@@ -1,0 +1,99 @@
+@import './variable.scss';
+@import './hover.scss';
+
+/** reset **/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 滚动条凹槽的颜色，还可以设置边框属性 */
+*::-webkit-scrollbar-track-piece {
+  background-color: #7FA7FF;
+  // -webkit-border-radius: 2em;
+  // -moz-border-radius: 2em;
+  // border-radius: 2em;
+}
+
+/* 滚动条的宽度 */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* 滚动条的设置 */
+*::-webkit-scrollbar-thumb {
+  background-color: rgba($color: #056AFF, $alpha: 0.8) ;
+  // -webkit-border-radius: 2em;
+  // -moz-border-radius: 2em;
+  // border-radius: 2em;
+  background-clip: padding-box;
+}
+
+/* 滚动条鼠标移上去 */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
+textarea {
+  resize: none;
+}
+
+/** reset **/
+
+/** 字体配置 **/
+@font-face {
+  font-family: AlibabaPuHuiTi-3-65-Medium;
+  src: url(../assets/fonts/AlibabaPuHuiTi-3-65-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 110-CAI978;
+  src: url(../assets/fonts/110-CAI978.woff2) format('woff2');
+}
+body {
+  font-family: 'RuiXian', -apple-system, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+  // font-family: 'AlibabaPuHuiTi-3-65-Medium', -apple-system, Arial, sans-serif,
+  //   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+  font-weight: 400;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-bold {
+  font-weight: 500;
+}
+
+.font-bolder {
+  font-weight: 700;
+}
+
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
